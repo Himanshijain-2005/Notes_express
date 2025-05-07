@@ -1,0 +1,30 @@
+_______________________________________________________________________________________________
+server_routes.js
+_______________________________________________________________________________________________
+
+instead of creating in server.js 
+app.get('/todoroutes/');
+app.post('/todoroutes/');
+app.get('/todoroutes/messy')
+app.get('todoroutes/greet') etc
+we notice that /todoutes/ is common.so instead of creating mess in server.js we create a separate folder 
+routes and list same routes there in folderwise.
+To make sure that that folder knew that it is router of server we use
+const route=require('express').Router()
+and just like we have make server app before now we make router route.and directs it different route.
+and export it.in main server file we import it const todoroute=require('./routes/todos')
+since we have only one server so we make routers many.so when server recieves a route req it directs it to 
+router.
+
+_______________________________________________________________________________________________
+jquery
+_______________________________________________________________________________________________
+go to code.query.js and copy source code and since will use it in frontend so we include it in public folder 
+and include script scr=" .js" in index.html.and run server.go to 4444/public and inspect in console.
+$() will give jquery
+2. when we write $(function()
+{
+
+}) in todo.js and eveything inside it bcs it is async function and it runs when page is fully loaded
+
+3. $.post is ajax function because it sends an asynchronous HTTP request to the server without reloading the page

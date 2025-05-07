@@ -1,0 +1,39 @@
+_______________________________________________________________________________________________
+1server.js
+_______________________________________________________________________________________________
+
+1. tiil now we were hosting our frontend using browser go live but we can also host our frontend on node
+using public folder but we will have to inform express that we are hosting frontend on it by
+app.use(express.static(__dirname+'/public')).by this we can listen to api calls on server made by frontend
+2. also app.use('/xyz',express.static(__dirname+'/public')) by this we can acess files in public folder by
+localhost://4444/xyz/a.html.public folder is mounted on /xyz route by server.if there is index.html in public 
+folder then by default localhost://4444/xyz will render index.html.
+3. index.html can be rendered by name of folder
+4. in public folder we keep those files which can be seen by public 
+5. we can even acess style.css by localhost://4444/xyz/css/style.css
+
+_______________________________________________________________________________________________
+
+To combine frontend and backend
+run server.js
+go to url localhost://4444/xyz/  it will give frontend of index.html
+in this there is form going to /hello when submitted
+in server.js define app.get('/hello')
+                        _____________
+       user ----------> | public     |    on req /xyz whole public folder is acessible
+               (req)    |            |
+                        |            |
+                        |_____________                
+                          server
+_______________________________________________________________________________________________
+
+concept of middleware
+function m1 ,m2 are middleware.they act like recursion.either call next first and perform while returning or 
+either perform first and call next later
+app.get(path,here we can put middleware,here function)
+we can do some stuff after res.send while returning like recursion
+_______________________________________________________________________________________________
+encoding in base64
+run server.js
+go to localhost:4444/xyz then isnspect element.there is inbuilt function in browser btoa()
+btoa(document.getElementById("inpcode").value)

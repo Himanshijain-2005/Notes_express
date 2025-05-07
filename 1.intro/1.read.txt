@@ -1,0 +1,39 @@
+ _______________________________________________________________________________________________
+server.js
+_______________________________________________________________________________________________
+
+1. req is powerful object to know everything about sending person
+2. if we wanna attach some data with url we can do by --> url?person=Himanshi and we can get
+   it by req.query.person
+3. we make computer server by express() and makes it listen http requests
+
+_______________________________________________________________________________________________
+Server2_form_get.js
+_______________________________________________________________________________________________
+
+1. to send a file in response we use sendfile(file location)
+2. form action me vo url de denge jispr hum jana chahte hai form ation='/greet' and submit krte 
+time jo input me denge vo url me query ki trh attach ho jayega 
+like run server2_form_get.js then 127.0.0.1:4444/form go to this then write name in input like Himanshi
+then url is directed to http://127.0.0.1:4444/greet?person=himanshi . because form action
+is '/greet' and input person is attached as querry 
+
+_______________________________________________________________________________________________
+server3_form_post.js
+_______________________________________________________________________________________________
+
+till now we are submitting form by get which is by default.
+but we can change method by method=post
+and if we submit form then it will show error because
+we need to define post method for /greet in server2_form.js and in post method we cannot take query 
+value from url because post gives more security and data submitted is in body.
+but to acess req we need to use middleware.middleware runs on req object before all get and post req.
+
+_______________________________________________________________________________________________
+
+for Postman  run server3_form_post.js
+go to post and url and localhost://greet and give data in body and person
+
+_______________________________________________________________________________________________
+server4_params.js
+"/:city" by writing : city is passed as parameter in url and can be acessed using req.params.city

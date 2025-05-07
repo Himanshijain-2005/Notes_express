@@ -1,0 +1,34 @@
+
+_______________________________________________________________________________________________
+
+till now we were using frontend and backend.when a client makes req we  send frontend 
+and client runs it on browser.we need api to connect frontend from browser on client side to
+ backend server
+But now we will use only backend to render both frontend by views folder and hence we will not need api part.
+in todo.js
+____________________________________________________________________________________________
+
+so we will use hbs as view engine to render frontend.for that we use app.set(view engine,hbs) in server.
+ans make a views folder and .hbs file in it.in routes file when we use route.render() it will look for file
+automatically in views folder.
+_______________________________________________________________________________________________
+
+res.render()
+_______________________________________________________________________________________________
+
+Purpose: Renders a template/view file using a view engine (like EJS, Pug).
+
+Use case: You want to send a dynamically-generated HTML page.
+
+Example:res.render("profile", { name: "Alice" });
+
+This looks for profile.ejs or profile.pug in your views folder and fills in the name.
+
+express.static se hum static files deliver krte hain aur res.render se dynamic files bhi deliver kr skte hain
+
+each time we submit on form page is reloaded and even if we diable java script on client side still it works bcs it 
+is renderd from our backend not browser.
+_______________________________________________________________________________________________
+one way is todolist using ajax where frontend and backend are different and use api to connect to backend and data is sent 
+in form of java script object.
+2nd way a new page is created by backend dynamically
